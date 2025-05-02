@@ -50,29 +50,342 @@
             </div>
         </section>
 
-        <section id="featured-hotels" class="container">
-            <h2>Öne Çıkan Oteller</h2>
+        <!-- Hotels Slideshow -->
+        <section id="featured-hotels" class="container my-5">
+            <h2 class="text-center">Öne Çıkan Oteller</h2>
             <div class="divider-custom mx-auto mb-4">
                 <div class="divider-custom-line bg-info" style="height: 3px; width: 100%;"></div>
             </div>
-            <div class="hotel-list">
-                <!-- Örnek Otel Kartı -->
-                <div class="hotel-card">
-                    <img src="images/hotel1.jpg" alt="Otel 1">
-                    <h3>Lüks Şehir Oteli</h3>
-                    <p>Şehir merkezinde konforlu konaklama.</p>
-                    <a href="search.php?hotel_id=1" class="btn">Detayları Gör</a>
+            
+            <div class="featured-hotels-container">
+                <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators/dots with improved styling -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#hotelCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel with improved layout -->
+                    <div class="carousel-inner rounded shadow">
+                        <!-- Hotel 1 -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-6 position-relative overflow-hidden">
+                                    <img src="images/hotel1.jpg" class="d-block w-100 rounded-start" alt="Lüks Şehir Oteli" style="height: 400px; object-fit: cover; transition: transform 0.5s;">
+                                    <div class="position-absolute top-0 end-0 bg-primary bg-opacity-75 text-white px-3 py-2 rounded-bottom-end">
+                                        <i class="fas fa-star me-1"></i> 5.0
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                        <h4 class="mb-0">Lüks Şehir Oteli</h4>
+                                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>İstanbul, Türkiye</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 bg-white d-flex align-items-center">
+                                    <div class="p-4">
+                                        <h3 class="mb-3 border-bottom pb-2">Otel Özellikleri</h3>
+                                        <p class="lead mb-3">Şehir merkezinde konforlu konaklama.</p>
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-wifi text-primary"></i>
+                                                </div>
+                                                <span>Ücretsiz Wi-Fi</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-swimming-pool text-primary"></i>
+                                                </div>
+                                                <span>Havuz</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-utensils text-primary"></i>
+                                                </div>
+                                                <span>Restoran</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <span class="text-muted text-decoration-line-through">₺1,500</span>
+                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,200 / gece</span>
+                                        </div>
+                                        
+                                        <a href="search.php?hotel_id=1" class="btn btn-primary w-100 py-2">Detayları Gör</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hotel 2 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6 position-relative overflow-hidden">
+                                    <img src="images/hotel2.jpg" class="d-block w-100 rounded-start" alt="Sahil Resort" style="height: 400px; object-fit: cover; transition: transform 0.5s;">
+                                    <div class="position-absolute top-0 end-0 bg-primary bg-opacity-75 text-white px-3 py-2 rounded-bottom-end">
+                                        <i class="fas fa-star me-1"></i> 4.8
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                        <h4 class="mb-0">Sahil Resort</h4>
+                                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Antalya, Türkiye</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 bg-white d-flex align-items-center">
+                                    <div class="p-4">
+                                        <h3 class="mb-3 border-bottom pb-2">Otel Özellikleri</h3>
+                                        <p class="lead mb-3">Denize sıfır, huzurlu bir tatil.</p>
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-wifi text-primary"></i>
+                                                </div>
+                                                <span>Ücretsiz Wi-Fi</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-umbrella-beach text-primary"></i>
+                                                </div>
+                                                <span>Özel Plaj</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-cocktail text-primary"></i>
+                                                </div>
+                                                <span>Bar</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <span class="text-muted text-decoration-line-through">₺1,800</span>
+                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,500 / gece</span>
+                                        </div>
+                                        
+                                        <a href="search.php?hotel_id=2" class="btn btn-primary w-100 py-2">Detayları Gör</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hotel 3 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6 position-relative overflow-hidden">
+                                    <img src="images/yayla.jpg" class="d-block w-100 rounded-start" alt="Dağ Manzaralı Resort" style="height: 400px; object-fit: cover; transition: transform 0.5s;">
+                                    <div class="position-absolute top-0 end-0 bg-primary bg-opacity-75 text-white px-3 py-2 rounded-bottom-end">
+                                        <i class="fas fa-star me-1"></i> 4.9
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                        <h4 class="mb-0">Dağ Manzaralı Resort</h4>
+                                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Bolu, Türkiye</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 bg-white d-flex align-items-center">
+                                    <div class="p-4">
+                                        <h3 class="mb-3 border-bottom pb-2">Otel Özellikleri</h3>
+                                        <p class="lead mb-3">Doğa ile iç içe huzur dolu bir tatil.</p>
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-wifi text-primary"></i>
+                                                </div>
+                                                <span>Ücretsiz Wi-Fi</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-spa text-primary"></i>
+                                                </div>
+                                                <span>Spa</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-hiking text-primary"></i>
+                                                </div>
+                                                <span>Doğa Yürüyüşleri</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <span class="text-muted text-decoration-line-through">₺1,350</span>
+                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,150 / gece</span>
+                                        </div>
+                                        
+                                        <a href="search.php?hotel_id=5" class="btn btn-primary w-100 py-2">Detayları Gör</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel 4 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6 position-relative overflow-hidden">
+                                    <img src="images/butik.jpg" class="d-block w-100 rounded-start" alt="Tarihi Butik Otel" style="height: 400px; object-fit: cover; transition: transform 0.5s;">
+                                    <div class="position-absolute top-0 end-0 bg-primary bg-opacity-75 text-white px-3 py-2 rounded-bottom-end">
+                                        <i class="fas fa-star me-1"></i> 4.7
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                        <h4 class="mb-0">Tarihi Butik Otel</h4>
+                                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Kapadokya, Türkiye</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 bg-white d-flex align-items-center">
+                                    <div class="p-4">
+                                        <h3 class="mb-3 border-bottom pb-2">Otel Özellikleri</h3>
+                                        <p class="lead mb-3">Eşsiz mağara odalarında büyülü bir deneyim.</p>
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-wifi text-primary"></i>
+                                                </div>
+                                                <span>Ücretsiz Wi-Fi</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-hot-tub text-primary"></i>
+                                                </div>
+                                                <span>Jakuzi</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-coffee text-primary"></i>
+                                                </div>
+                                                <span>Kahvaltı Dahil</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <span class="text-muted text-decoration-line-through">₺2,100</span>
+                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,750 / gece</span>
+                                        </div>
+                                        
+                                        <a href="search.php?hotel_id=3" class="btn btn-primary w-100 py-2">Detayları Gör</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel 5 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6 position-relative overflow-hidden">
+                                    <img src="images/lake.jpg" class="d-block w-100 rounded-start" alt="Göl Kenarı Otel" style="height: 400px; object-fit: cover; transition: transform 0.5s;">
+                                    <div class="position-absolute top-0 end-0 bg-primary bg-opacity-75 text-white px-3 py-2 rounded-bottom-end">
+                                        <i class="fas fa-star me-1"></i> 4.6
+                                    </div>
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                        <h4 class="mb-0">Göl Kenarı Otel</h4>
+                                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Sapanca, Türkiye</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 bg-white d-flex align-items-center">
+                                    <div class="p-4">
+                                        <h3 class="mb-3 border-bottom pb-2">Otel Özellikleri</h3>
+                                        <p class="lead mb-3">Göl manzaralı odalarla huzurlu bir kaçamak.</p>
+                                        <div class="mb-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-wifi text-primary"></i>
+                                                </div>
+                                                <span>Ücretsiz Wi-Fi</span>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-bicycle text-primary"></i>
+                                                </div>
+                                                <span>Bisiklet Kiralama</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="feature-icon bg-light rounded-circle p-2 me-3">
+                                                    <i class="fas fa-tshirt text-primary"></i>
+                                                </div>
+                                                <span>Çamaşırhane</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-4">
+                                            <span class="text-muted text-decoration-line-through">₺1,600</span>
+                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,350 / gece</span>
+                                        </div>
+                                        
+                                        <a href="search.php?hotel_id=4" class="btn btn-primary w-100 py-2">Detayları Gör</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation controls with improved styling -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
+                        <div class="carousel-nav-button bg-primary bg-opacity-75 rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </div>
+                        <span class="visually-hidden">Önceki</span>
+                    </button>
+                    
+                    <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
+                        <div class="carousel-nav-button bg-primary bg-opacity-75 rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </div>
+                        <span class="visually-hidden">Sonraki</span>
+                    </button>
                 </div>
-                <div class="hotel-card">
-                    <img src="images/hotel2.jpg" alt="Otel 2">
-                    <h3>Sahil Resort</h3>
-                    <p>Denize sıfır, huzurlu bir tatil.</p>
-                    <a href="search.php?hotel_id=2" class="btn">Detayları Gör</a>
+            </div>
+            
+            <!-- Mobile view with card layout -->
+            <div class="d-md-none mt-4">
+                <div class="card mb-3 shadow-sm hover-card">
+                    <div class="position-relative">
+                        <img src="images/hotel1.jpg" class="card-img-top" alt="Lüks Şehir Oteli" style="height: 200px; object-fit: cover;">
+                        <div class="position-absolute top-0 end-0 bg-primary text-white m-2 px-2 py-1 rounded">
+                            <i class="fas fa-star me-1"></i> 5.0
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Lüks Şehir Oteli</h5>
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-map-marker-alt me-1"></i> İstanbul, Türkiye</p>
+                        <div class="d-flex my-2">
+                            <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i> Wi-Fi</span>
+                            <span class="badge bg-light text-dark me-1"><i class="fas fa-swimming-pool me-1"></i> Havuz</span>
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <span class="text-muted text-decoration-line-through small">₺1,500</span>
+                            <span class="fs-5 fw-bold text-primary ms-2">₺1,200 / gece</span>
+                        </div>
+                        <a href="search.php?hotel_id=1" class="btn btn-primary w-100">Detayları Gör</a>
+                    </div>
                 </div>
-                <!-- Daha fazla otel kartı eklenebilir -->
+                
+                <div class="card mb-3 shadow-sm hover-card">
+                    <div class="position-relative">
+                        <img src="images/yayla.jpg" class="card-img-top" alt="Dağ Manzaralı Resort" style="height: 200px; object-fit: cover;">
+                        <div class="position-absolute top-0 end-0 bg-primary text-white m-2 px-2 py-1 rounded">
+                            <i class="fas fa-star me-1"></i> 4.9
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Dağ Manzaralı Resort</h5>
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-map-marker-alt me-1"></i> Bolu, Türkiye</p>
+                        <div class="d-flex my-2">
+                            <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i> Wi-Fi</span>
+                            <span class="badge bg-light text-dark me-1"><i class="fas fa-hiking me-1"></i> Doğa</span>
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <span class="text-muted text-decoration-line-through small">₺1,350</span>
+                            <span class="fs-5 fw-bold text-primary ms-2">₺1,150 / gece</span>
+                        </div>
+                        <a href="search.php?hotel_id=5" class="btn btn-primary w-100">Detayları Gör</a>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="search.php" class="btn btn-outline-primary px-4 py-2">Tüm Otelleri Gör <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
             </div>
         </section>
 
+        <!-- Details -->
         <section id="about" class="py-5 bg-light">
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -229,6 +542,7 @@
             </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact" class="container my-5">
             <h2 class="text-center mb-4">İletişim</h2>
             <div class="row g-4">
@@ -296,6 +610,7 @@
         </section>
     </main>
 
+        <!-- Footer and Licances -->
     <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container">
             <div class="row">
