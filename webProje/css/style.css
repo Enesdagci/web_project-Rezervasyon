@@ -1,109 +1,140 @@
-/* Genel Stiller */
-body {
-    font-family: sans-serif;
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    padding-top: 76px;
     line-height: 1.6;
+    color: #333;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+/* Modern Navbar */
+.navbar {
+    padding: 0.8rem 0;
+    background: linear-gradient(135deg, #008073 0%, #00695c 100%);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-h1, h2, h3 {
-    color: #444;
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-a {
-    color: #1ABC9C; /* Turkuaz link rengi */
-    text-decoration: none;
+.navbar-nav {
+    margin-left: 40px;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Update your existing media query */
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-left: 0;
+    }
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #1ABC9C; /* Turkuaz buton rengi */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #16A085; /* Koyu turkuaz hover rengi */
-    text-decoration: none;
-}
-
-/* Header */
-header {
-    background-color: #008073; /* Koyu turkuaz arkaplan */
-    padding: 1rem 0;
-    /* border-bottom: 1px solid #e7e7e7; */ /* Turkuaz arkaplanda bordera gerek yok */
-}
-
-header nav {
+/* Navbar Brand */
+.navbar-brand {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+    gap: 10px;
 }
 
-header .logo img {
-    height: 40px; /* Logonun yüksekliğini ayarla */
+.navbar-brand img {
+    height: 40px;
+    transition: height 0.3s ease;
 }
 
-header ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.navbar.scrolled .navbar-brand img {
+    height: 35px;
+}
+
+.navbar-brand span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
+    transition: font-size 0.3s ease;
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
     display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-header ul li {
-    margin-left: 1.5rem;
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white !important;
 }
 
-header ul li a {
-    color: #fff; /* Beyaz link rengi */
-    font-weight: 500;
-    padding: 8px 15px; /* Buton içi boşluk */
-    border-radius: 20px; /* Yuvarlak köşeler */
-    transition: background-color 0.15s ease, color 0.15s ease; /* Geçiş efekti (Hızlandırıldı) */
-    display: inline-block; /* Padding ve diğer block özelliklerini alması için */
+.navbar-nav .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white !important;
+    font-weight: 600;
 }
 
-header ul li a:hover {
-    /* color: #f1f1f1; */ /* Hover için çok açık gri - yerine arkaplan rengi */
-    background-color: rgba(255, 255, 255, 0.2); /* Hafif beyazımsı transparan arkaplan */
-    text-decoration: none; /* Alt çizgiyi kaldır */
+/* Dropdown Menu */
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    background-color: white;
+    margin-top: 0.5rem;
 }
 
-/* Hero Section (Ana Sayfa) */
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #008073;
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+    opacity: 0.2;
+}
+
+/* Admin Button */
+.btn-admin {
+    background: #16a085;
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-admin:hover {
+    background: #1abc9c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+}
+
+/* Hero Section */
 .hero {
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 150px 20px 100px;
     position: relative;
-    min-height: 70vh; /* Yüksekliği ayarla */
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,405 +147,143 @@ header ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Arka planı karartma */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: white;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Arama Formu */
+/* Search Form */
 .search-form {
     display: flex;
-    flex-wrap: wrap; /* Küçük ekranlarda alt alta geçsin */
-    gap: 10px;
-    background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf beyaz */
-    padding: 20px;
-    border-radius: 8px;
+    flex-wrap: wrap;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 .search-form input,
 .search-form select,
 .search-form button {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.search-form input[type="text"] {
-    flex-grow: 2; /* Daha fazla yer kaplasın */
-}
-
-.search-form input[type="date"] {
-    flex-grow: 1;
-}
-
-.search-form select {
-    flex-grow: 1;
-}
-
-.search-form button {
-    background-color: #16A085; /* Koyu turkuaz arama butonu */
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    flex-grow: 0.5;
-}
-
-.search-form button:hover {
-    background-color: #1ABC9C; /* Açık turkuaz hover */
-}
-
-/* Otel Listesi ve Kartları */
-#featured-hotels h2,
-.hotel-results h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.hotel-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.hotel-card {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.hotel-card:hover {
-    transform: translateY(-5px);
-}
-
-.hotel-card img {
-    width: 100%;
-    height: 200px; /* Resim yüksekliği */
-    object-fit: cover;
-}
-
-.hotel-card h3 {
-    font-size: 1.2rem;
-    margin: 1rem 1rem 0.5rem 1rem;
-}
-
-.hotel-card p {
-    margin: 0 1rem 1rem 1rem;
-    flex-grow: 1; /* İçeriği aşağı itsin */
-}
-
-.hotel-card .btn {
-    margin: 0 1rem 1rem 1rem;
-    align-self: flex-start; /* Butonu sola yasla */
-}
-
-/* Arama Sonuçları Sayfası */
-.search-criteria {
-    background-color: #f0f0f0;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.search-criteria p {
-    margin: 0;
-}
-
-/* Admin Paneli */
-.admin-panel h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.stats h2,
-.charts h2,
-.recent-activity h2 {
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.stat-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.stat-cards .card {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.stat-cards .card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.stat-cards .card p {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #1ABC9C; /* Turkuaz istatistik rengi */
-    margin: 0;
-}
-
-.charts {
-    margin-bottom: 2rem;
-}
-
-.chart-container {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 1.5rem;
-    position: relative;
-    /* height: 40vh; /* Yüksekliği ayarlayabilirsiniz */
-    /* width: 80vw; /* Genişliği ayarlayabilirsiniz */
-}
-
-.recent-activity ul {
-    list-style: none;
-    padding: 0;
-}
-
-.recent-activity li {
-    background-color: #fff;
     padding: 0.8rem 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #eee;
-}
-
-/* Giriş/Kayıt Sayfası */
-.auth-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-}
-
-.auth-container {
-    background-color: #fff;
-    padding: 2rem;
+    border: 2px solid #e8ecef;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    max-width: 400px;
-    width: 100%;
-}
-
-.auth-form {
-    display: none; /* Başlangıçta gizli */
-}
-
-.auth-form.active {
-    display: block; /* Aktif olan görünür */
-}
-
-.auth-form h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Padding içeriği etkilemesin */
-}
-
-.auth-form button {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #1ABC9C; /* Turkuaz giriş/kayıt butonu */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.auth-form button:hover {
-    background-color: #16A085; /* Koyu turkuaz hover */
-}
-
-.auth-form p {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.auth-form p a {
-    font-weight: 500;
-}
-
-
-/* Footer */
-footer {
-    background-color: #343a40;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-}
-
-/* Responsive Tasarım */
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-    }
-
-    header ul {
-        margin-top: 1rem;
-    }
-
-    header ul li {
-        margin: 0 0.5rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .search-form {
-        flex-direction: column;
-    }
-
-    .search-form input,
-    .search-form select,
-    .search-form button {
-        width: 100%; /* Tam genişlik */
-    }
-
-    .stat-cards {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-} 
-
-/* Bootstrap Overrides for theme colors */
-.btn-info {
-    background-color: #1ABC9C !important;
-    border-color: #1ABC9C !important;
-}
-
-.btn-info:hover {
-    background-color: #16A085 !important;
-    border-color: #16A085 !important;
-}
-
-.text-info {
-    color: #1ABC9C !important;
-}
-
-.btn-outline-primary:hover, 
-.btn-outline-info:hover,
-.btn-outline-danger:hover,
-.btn-outline-success:hover {
-    color: white !important;
-}
-/**/
-/* Enhanced Slideshow Styling */
-.featured-hotels-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.carousel-inner {
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.carousel-item {
-    transition: transform 0.6s ease-in-out;
-}
-
-.carousel-item .row {
-    margin: 0;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 10%;
-    opacity: 1;
-}
-
-.carousel-nav-button {
     transition: all 0.3s ease;
 }
 
-.carousel-nav-button:hover {
-    background-color: var(--bs-primary) !important;
-    transform: scale(1.1);
+.search-form input:focus,
+.search-form select:focus {
+    outline: none;
+    border-color: #008073;
+    box-shadow: 0 0 0 3px rgba(0, 128, 115, 0.1);
 }
 
-.carousel-indicators {
-    bottom: -40px;
+.search-form input[type="text"] {
+    min-width: 250px;
+    flex: 2;
 }
 
+.search-form input[type="date"],
+.search-form select {
+    min-width: 160px;
+    flex: 1;
+}
+
+.search-form button {
+    background: #008073;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.search-form button:hover {
+    background: #00695c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 128, 115, 0.3);
+}
+
+/* General Styles */
+.btn:hover {
+    text-decoration: none;
+}
+
+.text-info {
+    color: #008073 !important;
+}
+
+.btn-info {
+    background-color: #1abc9c !important;
+    border-color: #1abc9c !important;
+}
+
+.btn-info:hover {
+    background-color: #16a085 !important;
+    border-color: #16a085 !important;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+}
+
+/* Carousel Enhancements */
 .carousel-indicators button {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc;
-    border: none;
-    margin: 0 5px;
-    transition: all 0.3s ease;
+    opacity: 0.5;
 }
 
 .carousel-indicators button.active {
-    background-color: var(--bs-primary);
-    width: 12px;
-    height: 12px;
+    opacity: 1;
+    background-color: #008073;
+}
+
+.featured-hotels-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.carousel-nav-button:hover {
+    background-color: #008073 !important;
 }
 
 .feature-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
 }
 
 .hover-card {
@@ -526,70 +295,131 @@ footer {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-/* Image zoom effect on hover */
-.col-md-6.position-relative.overflow-hidden:hover img {
-    transform: scale(1.05);
+/* Utility Classes */
+.divider-custom-line.bg-info {
+    background-color: #1abc9c !important;
 }
 
-@media (max-width: 767.98px) {
-    .carousel {
-        display: none;
+/* Responsive Design */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding: 1rem 0;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .btn-admin {
+        margin-top: 1rem;
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form input,
+    .search-form select,
+    .search-form button {
+        width: 100%;
     }
 }
 
-/**/
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+    
+    .hero {
+        padding: 120px 15px 80px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
 }
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
-.facility-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #f8f9fa;
-    transition: all 0.3s ease;
+
+/* Additional Enhancements */
+.nav-link i {
+    font-size: 0.9rem;
 }
-.facility-icon:hover {
-    background-color: #e9ecef;
-    transform: scale(1.1);
+
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: 0.1rem;
 }
-.hotel-card {
-    transition: all 0.3s ease;
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.hotel-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+
+.hero-content {
+    animation: fadeInUp 0.5s ease-out;
 }
-.ribbon {
-    position: absolute;
-    z-index: 1;
-    overflow: hidden;
-    width: 150px;
-    height: 150px;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
-.ribbon span {
-    position: absolute;
-    display: block;
-    width: 225px;
-    padding: 8px 0;
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #008073;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00695c;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
     color: #fff;
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 1.5rem 0;
+    margin-top: 2rem;
 }
-.ribbon-top-left {
-    top: -10px;
-    left: -10px;
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
 }
-.ribbon-top-left span {
-    right: -25px;
-    top: 30px;
-    transform: rotate(-45deg);
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
 }

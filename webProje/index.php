@@ -3,30 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RezervasyonCenneti | Hotel | Apart | Bungladov</title>
-    <!-- Bootstrap CSS -->
+    <title>RezervasyonCenneti | Hotel | Apart | Bungalow</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="images/wing.png" type="image/ico">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="index.php" class="d-flex align-items-center text-decoration-none">
-                    <img src="images/logo.png" alt="Logo" style="height: 40px;">
-                    <span class="ms-2 text-white fw-bold">Rezervasyon Cenneti</span>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/logo.png" alt="Rezervasyon Cenneti">
+                    <span>Rezervasyon Cenneti</span>
                 </a>
+
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.php">
+                                <i class="fas fa-home me-1"></i> Ana Sayfa
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="hotelsDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-hotel me-1"></i> Oteller
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="hotelsDropdown">
+                                <li><a class="dropdown-item" href="#featured-hotels">Öne Çıkan Oteller</a></li>
+                                <li><a class="dropdown-item" href="search.php">Otel Ara</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Lüks Oteller</a></li>
+                                <li><a class="dropdown-item" href="#">Apart Daireler</a></li>
+                                <li><a class="dropdown-item" href="#">Bungalovlar</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">
+                                <i class="fas fa-info-circle me-1"></i> Hakkımızda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                <i class="fas fa-envelope me-1"></i> İletişim
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Items -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="auth.php">
+                                <i class="fas fa-user me-1"></i> Giriş / Kayıt
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="admin.php" class="btn btn-admin ms-2">
+                                <i class="fas fa-cog me-1"></i> Admin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul>
-                <li><a href="index.php">Ana Sayfa</a></li>
-                <li><a href="#about">Hakkımızda</a></li>
-                <li><a href="#contact">İletişim</a></li>
-                <li><a href="auth.php">Giriş Yap / Kayıt Ol</a></li>
-                <li><a href="admin.php">Admin Paneli</a></li>
-            </ul>
         </nav>
     </header>
 
@@ -110,7 +157,7 @@
                                         
                                         <div class="mb-4">
                                             <span class="text-muted text-decoration-line-through">₺1,500</span>
-                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,200 / gece</span>
+                                            <span class="fs-4 fw-bold text-primary ms-2">₺1,275 / gece</span>
                                         </div>
                                         
                                         <a href="search.php?hotel_id=1" class="btn btn-primary w-100 py-2">Detayları Gör</a>
@@ -373,7 +420,7 @@
                         </div>
                         <div class="mt-3 mb-3">
                             <span class="text-muted text-decoration-line-through small">₺1,350</span>
-                            <span class="fs-5 fw-bold text-primary ms-2">₺1,150 / gece</span>
+                            <span class="fs-5 fw-bold text-primary ms-2">₺1,090 / gece</span>
                         </div>
                         <a href="search.php?hotel_id=5" class="btn btn-primary w-100">Detayları Gör</a>
                     </div>
@@ -385,7 +432,7 @@
             </div>
         </section>
 
-        <!-- Details -->
+        <!-- About Section -->
         <section id="about" class="py-5 bg-light">
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -542,6 +589,144 @@
             </div>
         </section>
 
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-5" style="background-color: #f8f9fa; margin-bottom: 60px;">
+            <div class="container">
+                <h2 class="text-center mb-4 display-4 text-primary fw-bold" style="font-family: 'Segoe UI', Arial, sans-serif;">Müşterilerimizden Gelen Yorumlar</h2>
+                <div class="divider-custom mx-auto mb-4">
+                    <div class="divider-custom-line bg-info" style="height: 3px; width: 100%;"></div>
+                </div>
+                <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8 text-center">
+                                    <div class="testimonial-wrapper" style="background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                        <div class="mb-4">
+                                            <i class="fas fa-quote-left" style="font-size: 48px; color: #73c2fb; opacity: 0.3;"></i>
+                                        </div>
+                                        <p class="mb-4 fs-5" style="font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333;">
+                                            "Çorum'dan Antalya'ya tatil planım için çok yardımcı oldu. Site çok kullanışlı ve fiyatlar gerçekten uygun. 5 yıldızlı otelde sadece 1.500 TL'ye kaldım. Ailece harika bir tatil geçirdik."
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-center mb-3">
+                                            <!-- Using placeholder image - replace with actual image path -->
+                                            <img src="images/profil_3.jpg" alt="Kemal Bey" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover; border: 3px solid #ddd;">
+                                            <div style="text-align: left;">
+                                                <strong style="font-size: 18px; color: #333;">Kemal Bey</strong><br>
+                                                <small style="color: #666;">Çorum - Emekli Öğretmen</small>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8 text-center">
+                                    <div class="testimonial-wrapper" style="background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                        <div class="mb-4">
+                                            <i class="fas fa-quote-left" style="font-size: 48px; color: #73c2fb; opacity: 0.3;"></i>
+                                        </div>
+                                        <p class="mb-4 fs-5" style="font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333;">
+                                            "Rezervasyon Cenneti sayesinde Kapadokya'da muhteşem bir butik otel buldum. Arama filtrelerini çok kullanışlı buldum ve sadece 10 dakikada rezervasyonumu tamamladım. Kesinlikle tavsiye ederim!"
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-center mb-3">
+                                            <!-- Using placeholder image - replace with actual image path -->
+                                            <img src="images/profil_2.jpg" alt="Ayşe Demir" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover; border: 3px solid #ddd;">
+                                            <div style="text-align: left;">
+                                                <strong style="font-size: 18px; color: #333;">Ayşe Demir</strong><br>
+                                                <small style="color: #666;">İstanbul - Mimar</small>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8 text-center">
+                                    <div class="testimonial-wrapper" style="background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                        <div class="mb-4">
+                                            <i class="fas fa-quote-left" style="font-size: 48px; color: #73c2fb; opacity: 0.3;"></i>
+                                        </div>
+                                        <p class="mb-4 fs-5" style="font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333;">
+                                            "Müşteri hizmetleri gerçekten mükemmel. Rezervasyon iptali işlemim için gece 2'de aradığımda bile yardımcı oldular. Para iademi aynı gün aldım. Bu kadar güvenilir bir hizmet bulmak zor."
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-center mb-3">
+                                            <!-- Using placeholder image - replace with actual image path -->
+                                            <img src="images/profil_1.jpg" alt="Murat Bey" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover; border: 3px solid #ddd;">
+                                            <div style="text-align: left;">
+                                                <strong style="font-size: 18px; color: #333;">Murat Yıldırım</strong><br>
+                                                <small style="color: #666;">Ankara - İş Adamı</small>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                                            <i class="far fa-star" style="color: #ffc107;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Önceki</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Sonraki</span>
+                    </button>
+                </div>
+                
+                <!-- Additional Review Statistics -->
+                <div class="row mt-5 pt-4" style="margin-bottom: 60px;">
+                    <div class="col-md-4 text-center mb-4">
+                        <h3 class="display-5 fw-bold text-primary mb-2" style="font-family: 'Segoe UI', Arial, sans-serif;">4.8/5.0</h3>
+                        <p class="text-muted mb-0">Ortalama Müşteri Memnuniyeti</p>
+                        <div class="mt-2">
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star-half-alt" style="color: #ffc107;"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <h3 class="display-5 fw-bold text-primary mb-2" style="font-family: 'Segoe UI', Arial, sans-serif;">25000+</h3>
+                        <p class="text-muted mb-0">Mutlu Müşteri</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <h3 class="display-5 fw-bold text-primary mb-2" style="font-family: 'Segoe UI', Arial, sans-serif;">98%</h3>
+                        <p class="text-muted mb-0">Tekrar Rezervasyon Oranı</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact -->
         <section id="contact" class="container my-5">
             <h2 class="text-center mb-4">İletişim</h2>
@@ -610,7 +795,7 @@
         </section>
     </main>
 
-        <!-- Footer and Licances -->
+    <!-- Footer -->
     <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container">
             <div class="row">
@@ -745,7 +930,6 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>
